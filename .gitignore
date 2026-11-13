@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.DS_Store
+.env
+.env.*
+!.env.example
+build/
+dist/
+output/
+cache/
+examples/data/*.tif
+examples/data/*.tiff
+examples/data/private/

@@ -1,0 +1,44 @@
+title: Explore the flight paths
+eyebrow: SYNTHETIC DEMO • NOT REAL FLIGHT DATA
+subtitle: An imaginary figure eight above an imaginary hill
+credit: Made with Flightpath Photo Guide
+date: Synthetic example • 1 January 2026
+mode: paths
+region:
+  bounds:
+  - -0.1645605682689182
+  - 51.47860097758441
+  - -0.07539792895201436
+  - 51.52138134373069
+tracks:
+  files:
+  - data/demo-london.kml
+  height_crs: EPSG:9707
+terrain:
+  path: data/demo-london.tif
+  height_crs: EPSG:9707
+filters:
+  max_gap_s: 6
+  max_speed_m_s: 400
+  max_vertical_rate_m_s: 120
+proximity:
+  cell_size_m: 30
+  sample_step_m: 10
+  observer_height_m: 1.7
+  bands_m:
+  - 300
+  - 600
+  - 1000
+basemap:
+  provider: none
+style:
+  smooth_paths: true
+viewpoints:
+- name: Imaginary hilltop
+  longitude: -0.12
+  latitude: 51.5
+  note: Synthetic terrain; not a real spot
+output:
+  directory: ../output/demo-london-paths
+  width: 1400
+  height: 1750

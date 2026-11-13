@@ -1,0 +1,23 @@
+The MIT license applies to this project's source code and synthetic examples.
+It does not replace licenses or terms for third-party maps or input data.
+
+Historical screenshot: docs/assets/blue-angels-example.png
+Created for @jmania's October 2026 Blue Angels photography guide. The screenshot
+includes Esri World Street Map content and its licensors, credited on the image:
+Esri, HERE, Garmin, USGS, Intermap, INCREMENT P, NRCan, METI, NGCC,
+OpenStreetMap contributors, and the GIS User Community (plus service licensors).
+Esri static-map terms: https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm
+The historical flight inputs were user-provided ADS-B Exchange KML exports;
+those raw exports and downloaded basemap/elevation datasets are not bundled.
+
+Original analysis sources (not required for the synthetic examples):
+- USGS 3DEP: https://www.usgs.gov/3d-elevation-program
+- San Francisco building data: https://data.sfgov.org/d/ynuv-fyni
+- San Francisco tall-building inventory: https://data.sfgov.org/d/5kya-mfst
+- Vertical transformation grids: https://cdn.proj.org/
+- KML export implementation used to investigate altitude references:
+  https://github.com/wiedehopf/tar1090/blob/master/html/script.js
+
+Runtime dependencies are installed separately under their own licenses. No
+proprietary font or third-party library source is vendored. Default poster
+text uses Pillow's bundled default font; users may specify a licensed font.

@@ -1,0 +1,60 @@
+# Bring your own original tracks and terrain. This is NOT the synthetic demo.
+# Paths are relative to this YAML file. Private data is excluded from Git.
+title: Where can you get closest to the Blue Angels?
+eyebrow: SAN FRANCISCO BAY / PHOTOGRAPHER’S FIELD NOTES
+subtitle: Historical recorded passes • distances are estimates
+date: 10 October 2026 • original Blue Angels case study
+credit: '@jmania'
+mode: proximity
+region:
+  bounds: [-122.535, 37.765, -122.335, 37.873]
+tracks:
+  files: [data/private/*.kml]
+  # Verify the export's actual reference; the filename alone is not proof.
+  height_crs: EPSG:9707  # WGS 84 + EGM96 heights, metres
+terrain:
+  path: data/private/terrain.tif
+  height_crs: EPSG:6349  # NAD83(2011) + NAVD88 height; requires PROJ grids
+  # Optional buildings: GeoJSON absolute roof_height_m in the flight datum.
+  # buildings: data/private/roofs-egm96.geojson
+  # Optional land-only standing-location mask; important for coastal DEMs.
+  # land_mask: data/private/land.geojson
+filters:
+  max_gap_s: 6
+  max_speed_m_s: 400
+  max_vertical_rate_m_s: 120
+proximity:
+  observer_height_m: 1.7
+  cell_size_m: 20
+  sample_step_m: 10
+  bands_m: [300, 600, 1000]
+style:
+  smooth_paths: true
+basemap:
+  provider: none
+  # For a detailed basemap, change provider to esri and include its attribution:
+  # attribution: 'Sources: Esri, HERE, Garmin, USGS, Intermap, INCREMENT P, NRCan, Esri Japan, METI, Esri China (Hong Kong), Esri Korea, Esri (Thailand), NGCC, OpenStreetMap contributors, GIS User Community'
+viewpoints:
+  - {name: PIER 39, longitude: -122.4107, latitude: 37.8094, note: Historical example; check access}
+  - {name: Alcatraz, longitude: -122.4238, latitude: 37.8270, note: Ferry reservation required}
+  - {name: Marina Green, longitude: -122.4354, latitude: 37.8065, note: Waterfront}
+  - {name: Battery East Vista, longitude: -122.4734, latitude: 37.8084, note: Presidio overlook}
+  - {name: Slacker Hill, longitude: -122.4897, latitude: 37.83521, note: Hilltop hike}
+  - {name: Ina Coolbrith Park, longitude: -122.4157, latitude: 37.7978, note: Hillside park}
+# These were manual exclusions in the published case study. They do NOT apply
+# to anyone else's flights. Ingest identifiers must match the KML Placemark name.
+exclude:
+  - track: '~2B0257'
+    start: '2026-10-10T22:14:12.816Z'
+    reason: Isolated low report near Pine and Divisadero; unverified height.
+  - track: '~2B0257'
+    start: '2026-10-10T22:19:41.136Z'
+    reason: Isolated low report near Pine and Octavia; unverified height.
+  - track: '~2B0393'
+    start: '2026-10-10T22:36:30.766Z'
+    end: '2026-10-10T22:36:42.906Z'
+    reason: Ambiguous SoMa altitude branch after a sharp height discontinuity; excluded conservatively, not proven erroneous.
+output:
+  directory: ../output/san-francisco
+  width: 5600
+  height: 7000

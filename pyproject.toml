@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flightpath-photo-guide"
+version = "0.1.0"
+description = "Turn recorded flight tracks into shareable photography maps."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Josh Jacobson"}]
+dependencies = ["numpy>=1.24", "Pillow>=10.4", "pyproj>=3.6", "rasterio>=1.3", "scipy>=1.11", "PyYAML>=6"]
+
+[project.scripts]
+flightpath-photo-guide = "flightpath_photo_guide.cli:main"
+
+[project.urls]
+Repository = "https://github.com/jmania/flightpath-photo-guide"
+Discussion = "https://www.reddit.com/r/sanfrancisco/comments/1x3fn8m/if_you_want_to_get_close_to_the_blue_angels_today/"
+
+[tool.setuptools.packages.find]
+where = ["src"]

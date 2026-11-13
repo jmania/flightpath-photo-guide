@@ -1,0 +1,44 @@
+title: Where did the flights come closest?
+eyebrow: SYNTHETIC DEMO • NOT REAL FLIGHT DATA
+subtitle: An imaginary figure eight above an imaginary hill
+credit: Made with Flightpath Photo Guide
+date: Synthetic example • 1 January 2026
+mode: proximity
+region:
+  bounds:
+  - -122.46423842006227
+  - 37.777627869289525
+  - -122.39574096514134
+  - 37.822361922314194
+tracks:
+  files:
+  - data/demo-sf.kml
+  height_crs: EPSG:9707
+terrain:
+  path: data/demo-sf.tif
+  height_crs: EPSG:9707
+filters:
+  max_gap_s: 6
+  max_speed_m_s: 400
+  max_vertical_rate_m_s: 120
+proximity:
+  cell_size_m: 30
+  sample_step_m: 10
+  observer_height_m: 1.7
+  bands_m:
+  - 300
+  - 600
+  - 1000
+basemap:
+  provider: none
+style:
+  smooth_paths: true
+viewpoints:
+- name: Imaginary hilltop
+  longitude: -122.43
+  latitude: 37.8
+  note: Synthetic terrain; not a real spot
+output:
+  directory: ../output/demo-sf-proximity
+  width: 1400
+  height: 1750
